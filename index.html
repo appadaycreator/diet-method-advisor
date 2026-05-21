@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案</title>
+  <meta name="description" content="生活習慣・体質・目標から最適なダイエット法を8問で診断。糖質制限・間欠断食・ケトジェニック・運動型など、あなたに合う方法とコツをご提案。">
+  <link rel="canonical" href="https://appadaycreator.github.io/diet-method-advisor/">
+  <meta property="og:title" content="あなたに合うダイエット方法診断">
+  <meta property="og:description" content="体質・生活習慣から最適なダイエット法を8問で診断。糖質制限・間欠断食など比較提案。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appadaycreator.github.io/diet-method-advisor/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "あなたに合うダイエット方法診断",
+    "url": "https://appadaycreator.github.io/diet-method-advisor/",
+    "description": "生活習慣・体質・目標から最適なダイエット法を診断するツール。",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web"
+  }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","s3t9vl8h3v");</script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.onerror = function(msg, src, line, col, err) { console.error('Global error:', msg, src, line, col, err); return false; };
+    window.addEventListener('unhandledrejection', function(e) { console.error('Unhandled rejection:', e.reason); });
+  </script>
+  <style>
+    .choice-btn { transition: all 0.2s; cursor: pointer; }
+    .choice-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .choice-btn.selected { border-color: #10b981; background: #ecfdf5; color: #065f46; }
+    .diet-card { transition: all 0.2s; animation: fadeUp 0.5s ease; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
+    .meter-bar { transition: width 1s ease; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen text-gray-800">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="container mx-auto px-4 py-6 max-w-lg">
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold text-green-700 mb-1">🥗 ダイエット方法診断</h1>
+      <p class="text-green-500 text-sm">8問でわかる！あなたに最適なダイエット法TOP3</p>
+    </div>
+
+    <!-- AdSense -->
+    <div class="mb-4">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Top Screen -->
+    <div id="topScreen" class="bg-white rounded-2xl shadow-lg p-6 mb-4">
+      <div class="text-center mb-5">
+        <div class="text-5xl mb-3">🏃</div>
+        <h2 class="text-lg font-bold mb-2">どのダイエット法が合う？</h2>
+        <p class="text-gray-500 text-sm leading-relaxed">体質・生活習慣・食の好みから、あなたに続けられるダイエット法をご提案します。無理なく続けることが成功の秘訣！</p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 mb-5 text-sm text-center">
+        <div class="bg-green-50 rounded-xl p-3"><div class="text-xl mb-1">📝</div><div class="font-bold text-green-700">8問診断</div></div>
+        <div class="bg-green-50 rounded-xl p-3"><div class="text-xl mb-1">🥇</div><div class="font-bold text-green-700">TOP3提案</div></div>
+        <div class="bg-green-50 rounded-xl p-3"><div class="text-xl mb-1">⚠️</div><div class="font-bold text-green-700">注意点と続け方</div></div>
+        <div class="bg-green-50 rounded-xl p-3"><div class="text-xl mb-1">💡</div><div class="font-bold text-green-700">継続のコツ</div></div>
+      </div>
+      <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-3 mb-4 text-xs text-yellow-700">
+        ⚠️ この診断は参考情報です。持病がある方は医師に相談してください。
+      </div>
+      <button onclick="startDiagnosis()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold py-3 rounded-xl text-lg transition shadow-md">
+        🚀 診断スタート！
+      </button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="hidden">
+      <div class="bg-white rounded-2xl shadow-lg p-4 mb-4">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-bold text-green-600">質問 <span id="qNum">1</span>/8</span>
+          <span class="text-sm text-gray-400"><span id="qPct">0</span>% 完了</span>
+        </div>
+        <div class="bg-green-100 rounded-full h-2 mb-4">
+          <div id="progressBar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width:0%"></div>
+        </div>
+        <div id="qCategory" class="text-xs font-bold text-green-500 uppercase tracking-wide mb-1"></div>
+        <div id="qText" class="text-base font-bold text-gray-800 mb-4 leading-relaxed"></div>
+        <div id="choicesContainer" class="grid gap-2"></div>
+      </div>
+      <button onclick="prevQ()" id="prevBtn" class="hidden w-full bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-2 rounded-xl text-sm transition mb-4">← 前の質問へ</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="hidden">
+      <div class="bg-white rounded-2xl shadow-lg p-5 mb-4 diet-card">
+        <h2 class="text-xl font-bold text-center text-green-700 mb-4">🥗 診断結果</h2>
+        <div id="top3" class="grid gap-4 mb-5"></div>
+
+        <div class="bg-green-50 rounded-xl p-4 mb-4">
+          <h3 class="font-bold text-green-700 mb-2">💡 継続のための共通コツ</h3>
+          <ul class="text-sm text-gray-700 grid gap-2">
+            <li class="flex gap-2">📏 <span>週1回の体重測定で変化を把握（毎日測りすぎない）</span></li>
+            <li class="flex gap-2">💧 <span>水を1日2L飲むだけでダイエット効果あり</span></li>
+            <li class="flex gap-2">😴 <span>睡眠7時間以上でホルモンバランスを整える</span></li>
+            <li class="flex gap-2">📸 <span>食事を写真に撮るだけで食べすぎ防止になる</span></li>
+            <li class="flex gap-2">👥 <span>SNSやアプリで仲間を見つけると継続率が3倍に</span></li>
+          </ul>
+        </div>
+
+        <button onclick="restart()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 rounded-xl transition hover:from-green-400 hover:to-emerald-500 mb-2">🔄 もう一度診断する</button>
+      </div>
+
+      <!-- AdSense -->
+      <div class="mb-4">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- Amazon affiliate -->
+    <div class="bg-white rounded-2xl shadow-lg p-4 mb-3">
+      <h3 class="font-bold text-gray-800 mb-2 text-sm">📚 Amazonでダイエット本・食品を探す</h3>
+      <a href="https://www.amazon.co.jp/s?k=ダイエット+糖質制限+レシピ&tag=appadaycrea0f-22" target="_blank" rel="noopener" class="block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-2 px-4 rounded-lg text-center text-sm transition">
+        🛒 Amazonでダイエット本・食品を見る
+      </a>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg p-4 mb-3">
+      <h3 class="font-bold text-gray-800 mb-2 text-sm">📖 ヨンデミーで健康の知識を学ぼう</h3>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" target="_blank" rel="noopener" class="block bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg text-center text-sm transition">
+        📚 ヨンデミーで学ぶ
+      </a>
+      <img src="https://www11.a8.net/0.gif?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" width="1" height="1" alt="" style="border:none;">
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg p-4 mb-4">
+      <h3 class="font-bold text-gray-800 mb-3 text-sm">🔗 関連サービス</h3>
+      <div class="grid gap-2">
+        <a href="https://appadaycreator.github.io/bmi-body-tracker/" class="bg-green-50 hover:bg-green-100 rounded-lg p-3 text-sm transition text-green-700 font-medium">⚖️ BMI・体型トラッカー</a>
+        <a href="https://appadaycreator.github.io/calorie-calculator/" class="bg-green-50 hover:bg-green-100 rounded-lg p-3 text-sm transition text-green-700 font-medium">🍽️ カロリー計算機</a>
+        <a href="https://appadaycreator.github.io/gym-finder/" class="bg-green-50 hover:bg-green-100 rounded-lg p-3 text-sm transition text-green-700 font-medium">🏋️ ジムファインダー</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {q:'現在のBMIはどのくらいですか？（身長170cmなら65kg=BMI22.5）',cat:'現在の体型',choices:['😊 標準（BMI18.5〜24.9）','😐 少し気になる（BMI25〜27）','😕 標準より多め（BMI28〜30）','😮 かなり多い（BMI31以上）']},
+      {q:'ダイエットの主な目的は？',cat:'目標',choices:['⚖️ とにかく体重を減らしたい','👗 体型を引き締めたい・見た目改善','💪 筋肉をつけながら痩せたい','❤️ 健康維持・生活習慣改善']},
+      {q:'食事制限についてどのくらいできる？',cat:'食事制限',choices:['💪 しっかり管理できる','🤔 少し気をつける程度なら','😅 あまり制限はしたくない','🍕 食事は変えたくない']},
+      {q:'運動は得意・好きですか？',cat:'運動',choices:['🏃 大好き！毎日できる','🚶 週2〜3回なら続けられる','😐 あまり好きじゃないが少しなら','😴 運動は苦手・できればしたくない']},
+      {q:'過去にダイエットを試したことは？',cat:'過去の経験',choices:['🆕 今回が初挑戦','😊 成功したことがある','😔 挑戦したが続かなかった','🔄 何度か繰り返している']},
+      {q:'生活リズムはどちら？',cat:'生活リズム',choices:['🌅 朝型（早起き・朝食あり）','🌙 夜型（夜遅くまで起きている）','⚖️ どちらでもない','🔀 日によってバラバラ']},
+      {q:'料理は得意ですか？',cat:'料理',choices:['👨‍🍳 自炊が好き・得意','🍱 少しなら作れる','🛒 買って食べることが多い','🍔 外食・デリバリーが中心']},
+      {q:'ストレス食いはしやすい？',cat:'ストレス',choices:['😊 ほとんどない','🤔 たまにある','😔 よくある','😮 ストレスが多く食べすぎる']},
+    ];
+
+    const dietMethods = [
+      {name:'糖質制限ダイエット',emoji:'🥩',color:'#ef4444',
+       desc:'1日の糖質を100〜130gに抑えるダイエット法。ご飯・パン・麺の量を減らし、たんぱく質・脂質を中心に。即効性が高く、2〜4週間で変化を実感できる。',
+       pros:['⚡ 即効性が高い（2週間で-2kg以上も）','🍳 食事制限の中身がわかりやすい','🍗 肉・魚・チーズ・卵は制限なし'],
+       cautions:['⚠️ 最初の1週間はだるさ・頭痛が出ることも','⚠️ 長期間の過度な制限は体調不良の原因に','⚠️ 運動との組み合わせで効果UP'],
+       suitable:{food_control:true,no_exercise:true}},
+      {name:'間欠断食（16時間断食）',emoji:'⏰',color:'#f97316',
+       desc:'1日16時間断食・8時間の食事ウィンドウを作る方法。食べる量を減らすより「食べる時間帯」を管理する。食事内容の制限が少なく続けやすい。',
+       pros:['😊 食べる内容を大きく変えなくてよい','⏰ 生活リズムに組み込みやすい','🧠 集中力・胃腸の調子改善も期待できる'],
+       cautions:['⚠️ 空腹感に慣れるまで1〜2週間かかる','⚠️ 激しい運動は食事ウィンドウ内で行う','⚠️ 糖尿病の方は医師に相談を'],
+       suitable:{night_type:true,stress_eater:false}},
+      {name:'有酸素運動ダイエット',emoji:'🏃',color:'#22c55e',
+       desc:'ウォーキング・ジョギング・自転車など有酸素運動を週3〜5回行う方法。食事制限が少なく、体型引き締め・心肺機能向上に効果的。',
+       pros:['❤️ 心肺機能・健康維持に最適','🏃 体を動かすストレス解消効果がある','🦵 脚・お尻の引き締めに効果的'],
+       cautions:['⚠️ 有酸素運動だけでは筋肉量が落ちやすい','⚠️ 食事が増えると効果が出にくい','⚠️ 膝・腰の痛みに注意'],
+       suitable:{exercise_love:true,health:true}},
+      {name:'筋トレ+タンパク質ダイエット',emoji:'💪',color:'#8b5cf6',
+       desc:'筋トレで基礎代謝を上げながら、タンパク質を多く摂るボディメイク型ダイエット。見た目の引き締めと体重減少を同時に狙える最強の方法。',
+       pros:['💪 基礎代謝が上がりリバウンドしにくい','👗 体型・シルエットが大きく変わる','🥩 食事はタンパク質重視でお腹満足'],
+       cautions:['⚠️ 効果が出るまで2〜3ヶ月かかる','⚠️ 正しいフォームを学ぶ必要がある','⚠️ 筋肉痛・疲労管理が必要'],
+       suitable:{exercise_love:true,shape:true}},
+      {name:'食事記録・カロリー管理',emoji:'📱',color:'#0891b2',
+       desc:'スマホアプリで食事を記録し、カロリー収支を管理する方法。「見える化」することで食べすぎを防ぎ、着実に減量できる。',
+       pros:['📊 食べすぎが見えて自然と減量できる','🍽️ 好きなものを食べながら管理できる','📱 スマホアプリで簡単に記録可能'],
+       cautions:['⚠️ 記録が面倒になりやすい（最初1週間が鍵）','⚠️ カロリーだけでなく栄養バランスも意識','⚠️ 外食の場合はカロリー推測が難しい'],
+       suitable:{first_time:true,no_exercise:true}},
+    ];
+
+    let current = 0;
+    let answers = {};
+    const TOTAL = 8;
+
+    function startDiagnosis() {
+      current = 0; answers = {};
+      document.getElementById('topScreen').classList.add('hidden');
+      document.getElementById('quizScreen').classList.remove('hidden');
+      showQ();
+    }
+
+    function showQ() {
+      const q = questions[current];
+      document.getElementById('qNum').textContent = current+1;
+      document.getElementById('qPct').textContent = Math.round(current/TOTAL*100);
+      document.getElementById('progressBar').style.width = ((current/TOTAL)*100)+'%';
+      document.getElementById('qCategory').textContent = q.cat;
+      document.getElementById('qText').textContent = q.q;
+      const container = document.getElementById('choicesContainer');
+      container.innerHTML = '';
+      q.choices.forEach((c,i) => {
+        const btn = document.createElement('div');
+        btn.className = 'choice-btn border-2 border-gray-200 rounded-xl p-3 text-sm font-medium';
+        if(answers[current] === i) btn.classList.add('selected');
+        btn.textContent = c;
+        btn.onclick = () => selectAnswer(i, btn);
+        container.appendChild(btn);
+      });
+      document.getElementById('prevBtn').style.display = current > 0 ? 'block' : 'none';
+    }
+
+    function selectAnswer(idx, btn) {
+      answers[current] = idx;
+      document.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      setTimeout(() => {
+        if(current < TOTAL-1) { current++; showQ(); }
+        else { showResult(); }
+      }, 350);
+    }
+
+    function prevQ() {
+      if(current > 0) { current--; showQ(); }
+    }
+
+    function calcTop3() {
+      const scores = dietMethods.map((_,i)=>({idx:i,score:0}));
+      // Q1: 目標
+      if(answers[1]===0) { scores[0].score+=2; scores[1].score+=1; scores[4].score+=2; }
+      if(answers[1]===1) { scores[3].score+=3; scores[0].score+=1; }
+      if(answers[1]===2) { scores[3].score+=3; }
+      if(answers[1]===3) { scores[2].score+=2; scores[4].score+=1; }
+      // Q2: 食事制限
+      if(answers[2]===0) { scores[0].score+=2; scores[3].score+=2; }
+      if(answers[2]===1) { scores[4].score+=2; scores[1].score+=2; }
+      if(answers[2]===2) { scores[1].score+=3; scores[2].score+=2; }
+      if(answers[2]===3) { scores[2].score+=3; scores[1].score+=2; }
+      // Q3: 運動
+      if(answers[3]===0) { scores[2].score+=3; scores[3].score+=3; }
+      if(answers[3]===1) { scores[2].score+=2; scores[3].score+=1; }
+      if(answers[3]===2) { scores[1].score+=2; scores[0].score+=2; }
+      if(answers[3]===3) { scores[0].score+=3; scores[1].score+=3; scores[4].score+=2; }
+      // Q5: 生活リズム
+      if(answers[5]===1) { scores[1].score+=2; }
+      if(answers[5]===0) { scores[1].score+=1; scores[4].score+=1; }
+      return scores.sort((a,b)=>b.score-a.score).slice(0,3);
+    }
+
+    function showResult() {
+      document.getElementById('quizScreen').classList.add('hidden');
+      document.getElementById('resultScreen').classList.remove('hidden');
+      const top3 = calcTop3();
+      const rankLabels = ['🥇 第1位（最おすすめ）','🥈 第2位','🥉 第3位'];
+      const top3El = document.getElementById('top3');
+      top3El.innerHTML = top3.map(({idx},i) => {
+        const d = dietMethods[idx];
+        return `
+          <div class="border-2 rounded-xl p-4" style="border-color:${d.color}">
+            <div class="text-xs font-bold mb-2" style="color:${d.color}">${rankLabels[i]}</div>
+            <div class="text-lg font-bold mb-2">${d.emoji} ${d.name}</div>
+            <p class="text-sm text-gray-600 mb-3 leading-relaxed">${d.desc}</p>
+            <div class="mb-2">
+              <div class="text-xs font-bold text-green-600 mb-1">✅ メリット</div>
+              ${d.pros.map(p=>`<div class="text-xs text-gray-700 mb-1">${p}</div>`).join('')}
+            </div>
+            <div class="bg-yellow-50 rounded-lg p-2">
+              <div class="text-xs font-bold text-yellow-600 mb-1">⚠️ 注意点</div>
+              ${d.cautions.map(c=>`<div class="text-xs text-yellow-700 mb-1">${c}</div>`).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function restart() {
+      document.getElementById('resultScreen').classList.add('hidden');
+      document.getElementById('topScreen').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
