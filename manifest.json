@@ -4,7 +4,7 @@
   "description": "生活習慣・体質・目標から最適なダイエット法を8問で診断。糖質制限・間欠断食・ケトジェニック・運動型など、あなたに合う方法とコツをご提案。",
   "start_url": "/diet-method-advisor/",
   "display": "standalone",
-  "background_color": "#f8faf9",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "lang": "ja",
   "icons": [
