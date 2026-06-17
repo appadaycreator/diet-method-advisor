@@ -10,7 +10,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#7c3aed">
-  <meta name="description" content="生活習慣・体質・目標から最適なダイエット法を8問で診断。糖質制限・間欠断食・ケトジェニック・運動型など、あなたに合う方法とコツをご提案。登録不要・完全無料でご利用いただけます。">
+  <meta name="description" content="生活習慣・体質・目標から最適なダイエット法を8問で診断。糖質制限・間欠断食・ケトジェニック・運動型など、あなたに合う方法とコツをご提案">
+<meta name="author" content="AppADayCreator">
   <link rel="canonical" href="https://appadaycreator.com/diet-method-advisor/">
   <meta property="og:title" content="あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案">
   <meta property="og:description" content="体質・生活習慣から最適なダイエット法を8問で診断。糖質制限・間欠断食など比較提案。">
@@ -18,23 +19,32 @@
 <meta property="og:locale" content="ja_JP" />
   <meta property="og:url" content="https://appadaycreator.com/diet-method-advisor/">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "あなたに合うダイエット方法診断",
-    "url": "https://appadaycreator.com/diet-method-advisor/",
-    "description": "生活習慣・体質・目標から最適なダイエット法を診断するツール。",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Web"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "あなたに合うダイエット方法診断",
+  "url": "https://appadaycreator.com/diet-method-advisor/",
+  "description": "生活習慣・体質・目標から最適なダイエット法を診断するツール。",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "image": "https://appadaycreator.com/ogp.png",
+  "inLanguage": "ja"
+}
+</script>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+  <!-- Consent Mode v2 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});(function(){try{var k='cookie-consent-v2',o='cookie-consent';var c=localStorage.getItem(k);if(!c&&localStorage.getItem(o)==='1')c='granted';if(c){var s=c==='granted'?'granted':'denied';gtag('consent','update',{'analytics_storage':s,'ad_storage':s,'ad_user_data':s,'ad_personalization':s});}}catch(e){}})();</script>
+<!-- End Consent Mode v2 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDPNYD2875"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZDPNYD2875',{send_page_view:false});</script>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","s3t9vl8h3v");</script>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     window.onerror = function(msg, src, line, col, err) { console.error('Global error:', msg, src, line, col, err); return false; };
     window.addEventListener('unhandledrejection', function(e) { console.error('Unhandled rejection:', e.reason); });
@@ -59,10 +69,11 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   header,footer,nav,button,.no-print,
   [class*="share"],[class*="affiliate"],[id*="share"],
   [id*="affiliate"],[id*="banner"],
-  script,noscript{display:none!important}
+  script,noscript,#chartSection{display:none!important}
   body{background:#fff!important;color:#000!important;font-size:12pt}
   [id*="result"],[id*="output"],[id*="advice"],[id*="diagnosis"],[class*="result"]{display:block!important}
   a[href]::after{content:none!important}
+  canvas{display:none!important}
 }
 
 .card{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);overflow:hidden;}
@@ -71,10 +82,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
 /* AdSense unfilled: collapse empty ad slots */
 ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!important;height:0!important}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"このサービスは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料・登録不要でご利用いただけます。"}},{"@type":"Question","name":"入力データはどこに保存されますか？","acceptedAnswer":{"@type":"Answer","text":"お使いのデバイス内にのみ保存されます。外部送信は行いません。"}},{"@type":"Question","name":"結果はどのくらい正確ですか？","acceptedAnswer":{"@type":"Answer","text":"あくまで参考情報です。重要な判断の際は専門家にご相談ください。"}},{"@type":"Question","name":"どのような人が使っていますか？","acceptedAnswer":{"@type":"Answer","text":"初心者から専門家まで、多くの方にご利用いただいています。特に決断が必要な場面で活躍します。"}},{"@type":"Question","name":"結果をシェアできますか？","acceptedAnswer":{"@type":"Answer","text":"はい、診断結果はスクリーンショットやURLで友人・家族とシェアできます。"}},{"@type":"Question","name":"有料プランはありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、すべての機能を完全無料でご利用いただけます。"}},{"@type":"Question","name":"このツールは医療診断ですか？","acceptedAnswer":{"@type":"Answer","text":"本ツールは医療診断ではありません。健康状態に不安がある場合は、医師・専門家にご相談ください。"}},{"@type":"Question","name":"毎日使っても大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、継続的な健康管理にご活用ください。ただし本ツールの結果は参考値です。"}}]}</script>
-<script type="application/ld+json">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"このツールは医療診断ですか？","acceptedAnswer":{"@type":"Answer","text":"本ツールは医療診断ではありません。健康状態に不安がある場合は、医師・専門家にご相談ください。"}},{"@type":"Question","name":"毎日使っても大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、継続的な健康管理にご活用ください。ただし本ツールの結果は参考値です。"}}]}</script>
 
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,7 +91,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   "name": "appadaycreator",
   "url": "https://appadaycreator.com",
   "logo": "https://appadaycreator.com/logo.png",
-  "description": "無料Webサービス・診断ツール 180種類以上を運営"
+  "description": "無料Webサービス・診断ツール 180種類以上を運営",
+  "sameAs": [
+    "https://twitter.com/appadaycreate",
+    "https://appadaycreator.com"
+  ]
 }
 </script>
 <meta property="og:type" content="website">
@@ -127,10 +140,18 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://appadaycreator.com/"},{"@type":"ListItem","position":2,"name":"健康","item":"https://appadaycreator.com/category/health/"},{"@type":"ListItem","position":3,"name":"あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案","item":"https://appadaycreator.com/diet-method-advisor/"}]}</script>
 </head>
-<body class="min-h-screen text-gray-800" style="background:#f8fafc;"><a href="#main" class="sr-only">本文へスキップ</a>
+<body class="min-h-screen text-gray-800" style="background:#f8fafc;">
+<div style="background:#4338ca;padding:5px 12px;text-align:right;font-size:.78rem"><a href="/blog/" style="color:#c7d2fe;text-decoration:none;font-weight:600">📖 コラム</a>&nbsp;｜&nbsp;<a href="/" style="color:#c7d2fe;text-decoration:none">ホーム</a></div>
+<!-- r21-breadcrumb -->
+<nav aria-label="パンくずリスト" style="background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:5px 16px;font-size:.78rem;color:#6b7280;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
+  <a href="/" style="color:#4f46e5;text-decoration:none">ホーム</a>
+  <span style="margin:0 .35rem;color:#9ca3af">›</span>
+  <span style="color:#374151">あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案</span>
+</nav>
+<a href="#main" class="sr-only">本文へスキップ</a>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="container mx-auto px-4 py-6 max-w-lg" role="main" id="main">
+  <div class="container mx-auto px-4 py-6 max-w-2xl" role="main" id="main">
     <div class="text-center mb-6">
       <h1 class="text-2xl font-bold text-green-700 mb-1">🥗 ダイエット方法診断</h1>
       <p class="text-green-500 text-sm">8問でわかる！あなたに最適なダイエット法TOP3</p>
@@ -139,7 +160,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <!-- AdSense -->
     <div class="mb-4">
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
     </div>
 
     <!-- Top Screen -->
@@ -158,8 +179,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-3 mb-4 text-xs text-yellow-700">
         ⚠️ この診断は参考情報です。持病がある方は医師に相談してください。
       </div>
-      <button onclick="startDiagnosis()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold py-3 rounded-xl text-lg transition shadow-md" aria-label="🚀 診断スタート！">
+      <button onclick="startDiagnosis()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold py-3 rounded-xl text-lg transition shadow-md mb-3" aria-label="🚀 診断スタート！">
         🚀 診断スタート！
+      </button>
+      <button id="viewHistoryBtn" onclick="viewRecentResults()" class="w-full bg-blue-100 hover:bg-blue-200 text-blue-700 font-bold py-2 rounded-xl text-sm transition hidden">
+        📋 前回の診断結果を見る
       </button>
     </div>
 
@@ -175,15 +199,41 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         </div>
         <div id="qCategory" class="text-xs font-bold text-green-500 uppercase tracking-wide mb-1"></div>
         <div id="qText" class="text-base font-bold text-gray-800 mb-4 leading-relaxed"></div>
-        <div id="choicesContainer" class="grid gap-2"></div>
+        <div id="choicesContainer" class="grid gap-2 max-h-96 overflow-y-auto"></div>
       </div>
-      <button onclick="prevQ()" id="prevBtn" class="hidden w-full bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-2 rounded-xl text-sm transition mb-4" aria-label="← 前の質問へ">← 前の質問へ</button>
+      <button onclick="prevQ()" id="prevBtn" class="hidden w-full bg-blue-100 hover:bg-blue-200 text-blue-700 font-bold py-2 rounded-xl text-sm transition mb-4" aria-label="← 戻る">← 戻る</button>
     </div>
 
     <!-- Result Screen -->
     <div id="resultScreen" class="hidden">
       <div class="bg-white rounded-2xl shadow-lg p-5 mb-4 diet-card">
-        <h2 class="text-xl font-bold text-center text-green-700 mb-4">🥗 診断結果</h2>
+        <!-- タブUI -->
+        <div class="flex gap-2 mb-4 border-b border-gray-200">
+          <button onclick="switchResultTab('result')" id="resultTabBtn" class="flex-1 py-2 px-3 text-center font-bold text-sm border-b-2 border-green-500 text-green-700">📊 診断結果</button>
+          <button onclick="switchResultTab('comparison')" id="comparisonTabBtn" class="flex-1 py-2 px-3 text-center font-bold text-sm border-b-2 border-transparent text-gray-600 hover:text-gray-800">🔄 複数パターン比較</button>
+          <button onclick="switchResultTab('simulation')" id="simulationTabBtn" class="flex-1 py-2 px-3 text-center font-bold text-sm border-b-2 border-transparent text-gray-600 hover:text-gray-800">🎯 シミュレーション</button>
+        </div>
+
+        <!-- 診断結果タブ -->
+        <div id="resultTabContent">
+          <h2 class="text-xl font-bold text-center text-green-700 mb-4">🥗 診断結果</h2>
+
+          <!-- グラフセクション -->
+          <div id="chartSection" class="mb-5">
+          <div class="mb-4">
+            <h3 class="text-sm font-bold text-gray-700 mb-2">📊 ダイエット方法マッチ度</h3>
+            <div style="position:relative;height:250px;margin-bottom:16px;">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+          <div id="comparisonChartContainer" class="hidden">
+            <h3 class="text-sm font-bold text-gray-700 mb-2">📈 前回との比較</h3>
+            <div style="position:relative;height:200px;margin-bottom:16px;">
+              <canvas id="comparisonChart"></canvas>
+            </div>
+          </div>
+        </div>
+
         <div id="top3" class="grid gap-4 mb-5"></div>
 
         <div class="bg-green-50 rounded-xl p-4 mb-4">
@@ -198,31 +248,77 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         </div>
 
         <div class="bg-green-50 rounded-xl p-4 mb-4">
-        <h3 class="font-bold text-green-700 mb-3 text-sm">📤 この結果をシェア</h3>
+        <h3 class="font-bold text-green-700 mb-3 text-sm">📤 この結果をシェア・保存</h3>
         <div class="grid gap-2">
           <button onclick="shareLineResult()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded-lg text-sm transition">💬 LINEでシェア</button>
           <button onclick="shareTwitterResult()" class="bg-black hover:bg-gray-800 text-white font-bold py-2 rounded-lg text-sm transition">𝕏 Xでシェア</button>
           <button onclick="copyResultText()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-lg text-sm transition">📋 結果をコピー</button>
+          <button onclick="saveDiagnosisResult()" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 rounded-lg text-sm transition">💾 この結果を保存</button>
+          <button onclick="window.print()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg text-sm transition">🖨️ 印刷する</button>
         </div>
       </div>
 
       <button onclick="restart()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 rounded-xl transition hover:from-green-400 hover:to-emerald-500 mb-2">🔄 もう一度診断する</button>
+        </div>
+        </div>
+
+        <!-- 複数パターン比較タブ -->
+        <div id="comparisonTabContent" class="hidden">
+          <h2 class="text-xl font-bold text-center text-green-700 mb-4">🔄 複数パターン比較</h2>
+          <div class="bg-green-50 rounded-lg p-3 mb-4 text-sm text-green-700">
+            📝 複数のパターン（パターンA・B・C）を入力して、TOP3の診断結果を並べて比較できます。
+          </div>
+
+          <div class="mb-4">
+            <label class="block font-bold mb-2 text-sm">比較パターン数</label>
+            <select id="patternCount" onchange="updateComparisonPatterns()" class="w-full border border-gray-300 rounded-lg p-2">
+              <option value="2">2パターン（A・B）</option>
+              <option value="3" selected>3パターン（A・B・C）</option>
+            </select>
+          </div>
+
+          <div id="comparisonPatternsContainer" class="mb-4"></div>
+
+          <button onclick="runComparison()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded-lg mb-4">▶ 比較実行</button>
+
+          <div id="comparisonResultTable" class="hidden overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-green-100">
+                  <th class="border border-gray-300 p-2 text-left">ダイエット法</th>
+                  <th id="compPatternA" class="border border-gray-300 p-2 text-center">パターンA</th>
+                  <th id="compPatternB" class="border border-gray-300 p-2 text-center">パターンB</th>
+                  <th id="compPatternC" class="border border-gray-300 p-2 text-center hidden">パターンC</th>
+                </tr>
+              </thead>
+              <tbody id="comparisonTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- シミュレーションタブ -->
+        <div id="simulationTabContent" class="hidden">
+          <h2 class="text-xl font-bold text-center text-green-700 mb-4">🎯 シミュレーション</h2>
+          <div class="bg-green-50 rounded-lg p-3 mb-4 text-sm text-green-700">
+            💡 質問の回答を1つ変更して、診断結果がどう変わるかリアルタイムで確認できます。
+          </div>
+
+          <div id="simulationControls" class="mb-4"></div>
+
+          <div id="simulationResult" class="hidden mb-4 bg-blue-50 rounded-lg p-4 border border-blue-200">
+            <h3 class="font-bold text-blue-700 mb-2">📊 シミュレーション結果</h3>
+            <div id="simulationResultContent" class="text-sm text-blue-700"></div>
+          </div>
+        </div>
       </div>
 
       <!-- AdSense -->
       <div class="mb-4">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
       </div>
     </div>
 
-    <!-- Amazon affiliate -->
-    <div class="bg-white rounded-2xl shadow-lg p-4 mb-3">
-      <h3 class="font-bold text-gray-800 mb-2 text-sm">📚 Amazonでダイエット本・食品を探す</h3>
-      <a href="https://www.amazon.co.jp/s?k=ダイエット+糖質制限+レシピ&tag=appadaycrea0f-22" target="_blank" rel="noopener" class="block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-2 px-4 rounded-lg text-center text-sm transition js-track-affiliate" data-platform="Amazon" data-item-name="ダイエット糖質制限レシピ" data-link-type="affiliate_link">
-        🛒 Amazonでダイエット本・食品を見る
-      </a>
-    </div>
     <div class="bg-white rounded-2xl shadow-lg p-4 mb-3">
       <h3 class="font-bold text-gray-800 mb-2 text-sm">🧘 ホットヨガで健康的にダイエット</h3>
       <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+18PTPM+1O96+5ZEMQ" target="_blank" rel="nofollow noopener noreferrer" class="block bg-pink-500 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-lg text-center text-sm transition">
@@ -283,6 +379,58 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     let current = 0;
     let answers = {};
     const TOTAL = 8;
+    let radarChartInstance = null;
+    let comparisonChartInstance = null;
+
+    // localStorage 機能
+    function saveDiagnosisResult() {
+      const top3 = calcTop3();
+      const result = {
+        timestamp: new Date().toISOString(),
+        answers: answers,
+        top3: top3,
+        methods: top3.map(({idx}) => dietMethods[idx].name)
+      };
+      const results = loadRecentResults();
+      results.unshift(result);
+      if(results.length > 5) results.pop();
+      localStorage.setItem('dietDiagnosisHistory', JSON.stringify(results));
+      alert('診断結果を保存しました！');
+      updateHistoryButton();
+    }
+
+    function loadRecentResults() {
+      const stored = localStorage.getItem('dietDiagnosisHistory');
+      return stored ? JSON.parse(stored) : [];
+    }
+
+    function updateHistoryButton() {
+      const results = loadRecentResults();
+      const btn = document.getElementById('viewHistoryBtn');
+      if(results.length > 0) {
+        btn.classList.remove('hidden');
+      } else {
+        btn.classList.add('hidden');
+      }
+    }
+
+    function viewRecentResults() {
+      const results = loadRecentResults();
+      if(results.length === 0) {
+        alert('保存された診断結果がありません');
+        return;
+      }
+      const resultText = results.map((r, i) =>
+        `${i+1}. ${new Date(r.timestamp).toLocaleDateString('ja-JP')} - ${r.methods.join(' > ')}`
+      ).join('\n');
+      const choice = prompt('保存された診断結果を表示します:\n' + resultText + '\n\n最新の結果を表示しますか？', '1');
+      if(!choice) return;
+      const idx = parseInt(choice) - 1;
+      if(idx >= 0 && idx < results.length) {
+        answers = results[idx].answers;
+        showResult();
+      }
+    }
 
     function startDiagnosis() {
       current = 0; answers = {};
@@ -325,9 +473,21 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       if(current > 0) { current--; showQ(); }
     }
 
+    function getStars(percentage) {
+      if(percentage >= 90) return '⭐⭐⭐⭐⭐';
+      if(percentage >= 75) return '⭐⭐⭐⭐☆';
+      if(percentage >= 60) return '⭐⭐⭐☆☆';
+      if(percentage >= 45) return '⭐⭐☆☆☆';
+      return '⭐☆☆☆☆';
+    }
+
     function calcTop3() {
       const scores = dietMethods.map((_,i)=>({idx:i,score:0}));
-      // Q0: 現在の体型 - BMI（使用しない）
+      // Q0: 現在の体型 - BMI
+      if(answers[0]===0) { scores[2].score+=2; scores[3].score+=2; } // 標準→運動・筋トレ向き
+      if(answers[0]===1) { scores[4].score+=1; scores[0].score+=1; } // 少し気になる→管理系
+      if(answers[0]===2) { scores[0].score+=2; scores[1].score+=1; } // 標準より多め→糖質制限
+      if(answers[0]===3) { scores[0].score+=3; scores[4].score+=2; scores[1].score+=1; } // かなり多い→即効性優先
       // Q1: 目標
       if(answers[1]===0) { scores[0].score+=2; scores[1].score+=1; scores[4].score+=2; }
       if(answers[1]===1) { scores[3].score+=3; scores[0].score+=1; }
@@ -366,18 +526,28 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       const maxScore = top3[0].score;
       const rankLabels = ['🥇 第1位（最おすすめ）','🥈 第2位','🥉 第3位'];
       const top3El = document.getElementById('top3');
-      top3El.innerHTML = top3.map(({idx,score},i) => {
+
+      // グラフ表示
+      setTimeout(() => showCharts(top3, maxScore), 100);
+
+      // 1位は強調表示、2・3位は折り畳み
+      const cards = top3.map(({idx,score},i) => {
         const d = dietMethods[idx];
         const percentage = Math.round((score / maxScore) * 100);
-        return `
-          <div class="border-2 rounded-xl p-4" style="border-color:${d.color};position:relative">
+        const stars = getStars(percentage);
+        const isFirst = i === 0;
+        const borderWidth = isFirst ? '3px' : '2px';
+        const bgStyle = isFirst ? `background:${d.color}08;` : '';
+        const badge = isFirst ? `<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:${d.color};color:white;font-size:11px;font-weight:700;padding:3px 12px;border-radius:12px;white-space:nowrap;">★ あなたに最もおすすめ</div>` : '';
+        const cardContent = `
+            ${badge}
             <div class="text-xs font-bold mb-2" style="color:${d.color}">${rankLabels[i]}</div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-              <div class="text-lg font-bold">${d.emoji} ${d.name}</div>
-              <div style="font-size:13px;font-weight:700;padding:4px 8px;border-radius:6px;background:${d.color}22;color:${d.color}">マッチ度: ${percentage}%</div>
+              <div class="${isFirst ? 'text-xl' : 'text-lg'} font-bold">${d.emoji} ${d.name}</div>
+              <div style="font-size:13px;font-weight:700;padding:4px 8px;border-radius:6px;background:${d.color}22;color:${d.color}">${stars}</div>
             </div>
-            <div style="height:4px;background:#e5e7eb;border-radius:2px;margin-bottom:3px">
-              <div style="height:100%;background:${d.color};border-radius:2px;width:${percentage}%"></div>
+            <div style="height:4px;background:#e5e7eb;border-radius:2px;margin-bottom:8px">
+              <div class="meter-bar" style="height:100%;background:${d.color};border-radius:2px;width:${percentage}%"></div>
             </div>
             <p class="text-sm text-gray-600 mb-3 leading-relaxed">${d.desc}</p>
             <div class="mb-2">
@@ -387,10 +557,21 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
             <div class="bg-yellow-50 rounded-lg p-2">
               <div class="text-xs font-bold text-yellow-600 mb-1">⚠️ 注意点</div>
               ${d.cautions.map(c=>`<div class="text-xs text-yellow-700 mb-1">${c}</div>`).join('')}
-            </div>
-          </div>
-        `;
-      }).join('');
+            </div>`;
+
+        if(isFirst) {
+          return `<div class="border rounded-xl p-4 diet-card" style="border-width:${borderWidth};border-color:${d.color};position:relative;margin-top:16px;${bgStyle}">${cardContent}</div>`;
+        } else {
+          return `<details class="border-2 rounded-xl diet-card" style="border-color:${d.color}88;">
+            <summary style="padding:14px 16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+              <span class="font-bold text-sm">${rankLabels[i]} ${d.emoji} ${d.name}</span>
+              <span style="font-size:13px;font-weight:700;padding:3px 8px;border-radius:6px;background:${d.color}22;color:${d.color}">${stars} ▼</span>
+            </summary>
+            <div class="p-4" style="${bgStyle}">${cardContent}</div>
+          </details>`;
+        }
+      });
+      top3El.innerHTML = cards.join('');
     }
 
     function getResultText() {
@@ -425,92 +606,389 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       });
     }
 
+    function showCharts(top3, maxScore) {
+      // 全5つのダイエット方法のスコアを計算（正規化）
+      const allScores = dietMethods.map((_, idx) => {
+        const entry = top3.find(t => t.idx === idx);
+        return entry ? Math.round((entry.score / maxScore) * 100) : 0;
+      });
+
+      // レーダーチャート（全5つの方法）
+      const ctx = document.getElementById('radarChart');
+      if(radarChartInstance) radarChartInstance.destroy();
+      radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: dietMethods.map(d => d.emoji + ' ' + d.name),
+          datasets: [{
+            label: 'マッチ度',
+            data: allScores,
+            borderColor: '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            pointBackgroundColor: '#10b981',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 5
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+            r: {
+              beginAtZero: true,
+              max: 100,
+              ticks: { stepSize: 25 }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+
+      // 前回との比較チャート（2回目以降）
+      const results = loadRecentResults();
+      if(results.length > 1) {
+        const prevResult = results[1];
+        const prevTop3 = prevResult.top3;
+        const prevMaxScore = prevTop3[0].score;
+        const prevScores = dietMethods.map((_, idx) => {
+          const entry = prevTop3.find(t => t.idx === idx);
+          return entry ? Math.round((entry.score / prevMaxScore) * 100) : 0;
+        });
+
+        const comparisonContainer = document.getElementById('comparisonChartContainer');
+        comparisonContainer.classList.remove('hidden');
+
+        const compCtx = document.getElementById('comparisonChart');
+        if(comparisonChartInstance) comparisonChartInstance.destroy();
+        comparisonChartInstance = new Chart(compCtx, {
+          type: 'bar',
+          data: {
+            labels: dietMethods.map(d => d.emoji),
+            datasets: [
+              {
+                label: '今回',
+                data: allScores,
+                backgroundColor: '#10b981'
+              },
+              {
+                label: '前回',
+                data: prevScores,
+                backgroundColor: '#94a3b8'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100
+              }
+            },
+            plugins: {
+              legend: { display: true }
+            }
+          }
+        });
+      } else {
+        document.getElementById('comparisonChartContainer').classList.add('hidden');
+      }
+    }
+
     function restart() {
       document.getElementById('resultScreen').classList.add('hidden');
       document.getElementById('topScreen').classList.remove('hidden');
     }
+
+    // M7: タブ切り替え
+    function switchResultTab(tab) {
+      const tabs = ['result', 'comparison', 'simulation'];
+      tabs.forEach(t => {
+        document.getElementById(t + 'TabBtn').classList.toggle('border-b-2 border-green-500 text-green-700', t === tab);
+        document.getElementById(t + 'TabBtn').classList.toggle('border-b-2 border-transparent text-gray-600', t !== tab);
+        document.getElementById(t + 'TabContent').classList.toggle('hidden', t !== tab);
+      });
+      if(tab === 'comparison') {
+        updateComparisonPatterns();
+      } else if(tab === 'simulation') {
+        initSimulation();
+      }
+    }
+
+    // 複数パターン比較：入力フォーム生成
+    function updateComparisonPatterns() {
+      const count = parseInt(document.getElementById('patternCount').value);
+      const container = document.getElementById('comparisonPatternsContainer');
+      container.innerHTML = '';
+      const labels = ['パターンA', 'パターンB', 'パターンC'];
+      for(let p=0; p<count; p++) {
+        const label = labels[p];
+        const div = document.createElement('div');
+        div.className = 'mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200';
+        div.innerHTML = `
+          <h3 class="font-bold text-sm mb-3">${label}</h3>
+          <div class="text-xs space-y-2">
+            ${questions.map((q,i) => `
+              <div class="mb-2">
+                <label class="block font-bold text-gray-700 mb-1">${q.cat}: ${q.q}</label>
+                <select id="compPattern${p}Q${i}" class="w-full border border-gray-300 rounded p-1.5 text-sm">
+                  <option value="">選択...</option>
+                  ${q.choices.map((c,j) => `<option value="${j}">${c}</option>`).join('')}
+                </select>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(div);
+      }
+    }
+
+    // 複数パターン比較：実行
+    function runComparison() {
+      const count = parseInt(document.getElementById('patternCount').value);
+      const patterns = [];
+      let allValid = true;
+
+      for(let p=0; p<count; p++) {
+        const pattern = {};
+        for(let i=0; i<8; i++) {
+          const val = document.getElementById(`compPattern${p}Q${i}`).value;
+          if(val === '') { allValid = false; break; }
+          pattern[i] = parseInt(val);
+        }
+        if(!allValid) break;
+        patterns.push(pattern);
+      }
+
+      if(!allValid) {
+        alert('すべての質問に回答してください');
+        return;
+      }
+
+      const tbody = document.getElementById('comparisonTableBody');
+      tbody.innerHTML = '';
+
+      // 各パターンのTOP3を計算
+      const patternResults = patterns.map(p => {
+        answers = p;
+        return calcTop3();
+      });
+
+      // テーブル行を生成
+      const allMethods = new Set();
+      patternResults.forEach(r => r.forEach(({idx}) => allMethods.add(idx)));
+      Array.from(allMethods).sort((a,b) => a-b).forEach(methodIdx => {
+        const method = dietMethods[methodIdx];
+        const row = document.createElement('tr');
+        row.className = 'border-b border-gray-300';
+        let content = `<td class="border border-gray-300 p-2 font-bold text-sm">${method.emoji} ${method.name}</td>`;
+
+        for(let p=0; p<count; p++) {
+          const result = patternResults[p].find(r => r.idx === methodIdx);
+          const maxScore = patternResults[p][0].score;
+          const score = result ? Math.round((result.score / maxScore) * 100) : 0;
+          const rank = result ? patternResults[p].findIndex(r => r.idx === methodIdx) + 1 : '-';
+          const stars = score > 0 ? getStars(score) : '❌';
+          content += `<td class="border border-gray-300 p-2 text-center text-sm">
+            <div class="font-bold">${rank !== '-' ? ['🥇','🥈','🥉'][rank-1] : ''}${rank !== '-' ? rank + '位' : '圏外'}</div>
+            <div>${stars}</div>
+            <div class="text-xs text-gray-600">${score}%</div>
+          </td>`;
+        }
+
+        row.innerHTML = content;
+        tbody.appendChild(row);
+      });
+
+      // テーブル表示
+      document.getElementById('comparisonResultTable').classList.remove('hidden');
+
+      // ヘッダーも更新
+      const labels = ['パターンA', 'パターンB', 'パターンC'];
+      for(let p=0; p<3; p++) {
+        const cell = document.getElementById(`compPattern${p === 0 ? 'A' : p === 1 ? 'B' : 'C'}`);
+        if(p < count) {
+          cell.classList.remove('hidden');
+          cell.textContent = labels[p];
+        } else {
+          cell.classList.add('hidden');
+        }
+      }
+    }
+
+    // シミュレーション：初期化
+    function initSimulation() {
+      const container = document.getElementById('simulationControls');
+      container.innerHTML = '<div class="text-xs space-y-3">' + questions.map((q,i) => `
+        <div class="mb-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <label class="block font-bold text-sm mb-2">${q.cat}: ${q.q}</label>
+          <select id="simQ${i}" onchange="updateSimulation()" class="w-full border border-gray-300 rounded p-2">
+            <option value="">現在の回答: ${q.choices[answers[i]]}</option>
+            ${q.choices.map((c,j) => j !== answers[i] ? `<option value="${j}">試す: ${c}</option>` : '').join('')}
+          </select>
+        </div>
+      `).join('') + '</div>';
+    }
+
+    // シミュレーション：リアルタイム再計算
+    function updateSimulation() {
+      const baseAnswers = {...answers};
+      let hasChange = false;
+      const changes = [];
+
+      for(let i=0; i<8; i++) {
+        const val = document.getElementById(`simQ${i}`).value;
+        if(val !== '') {
+          hasChange = true;
+          const newAnswer = parseInt(val);
+          const oldAnswer = answers[i];
+          changes.push({q: i, oldChoice: questions[i].choices[oldAnswer], newChoice: questions[i].choices[newAnswer]});
+          baseAnswers[i] = newAnswer;
+        }
+      }
+
+      if(!hasChange) {
+        document.getElementById('simulationResult').classList.add('hidden');
+        return;
+      }
+
+      const origAnswers = answers;
+      answers = baseAnswers;
+      const newTop3 = calcTop3();
+      answers = origAnswers;
+
+      const maxScore = newTop3[0].score;
+      const resultContent = document.getElementById('simulationResultContent');
+      let html = '<div class="mb-3"><strong>変更内容:</strong><ul class="list-disc ml-4 text-xs mt-1">';
+      changes.forEach(c => {
+        html += `<li><strong>${questions[c.q].cat}:</strong> ${c.oldChoice} → ${c.newChoice}</li>`;
+      });
+      html += '</ul></div><div><strong>予想される結果:</strong><div class="mt-2">';
+      newTop3.forEach(({idx, score}, i) => {
+        const d = dietMethods[idx];
+        const percentage = Math.round((score / maxScore) * 100);
+        const rankLabels = ['🥇 第1位', '🥈 第2位', '🥉 第3位'];
+        html += `<div class="mb-2 p-2 bg-white rounded border border-gray-300">
+          <div class="font-bold">${rankLabels[i]} ${d.emoji} ${d.name}</div>
+          <div class="text-xs text-gray-600">${percentage}% マッチ</div>
+        </div>`;
+      });
+      html += '</div></div>';
+      resultContent.innerHTML = html;
+      document.getElementById('simulationResult').classList.remove('hidden');
+    }
+
+    // ページロード時の初期化
+    document.addEventListener('DOMContentLoaded', updateHistoryButton);
   </script>
 <div style="text-align:center;padding:8px;font-size:11px;"><a href="privacy-policy.html" style="color:inherit;font-size:11px;opacity:0.7;text-decoration:underline;">プライバシーポリシー</a></div>
-<section style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 16px;margin-top:16px;">
+<section style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 16px;margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;">
   <h2 style="font-size:16px;font-weight:700;color:#1e293b;margin:0 0 16px;text-align:center;">❓ よくある質問（FAQ）</h2>
   <div style="max-width:680px;margin:0 auto;">
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 診断結果の精度はどのくらいですか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">本ツールは入力情報をもとにした参考情報の提供を目的としています。重要な判断の際は専門家や公式情報もあわせてご確認ください。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. どのダイエット法が向くかどう判定していますか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">生活習慣・体質・目標への8問の回答から、糖質制限・間欠断食・ケトジェニック・運動型などとの相性を判定します。医学的な栄養指導ではないため、持病がある方や減量幅が大きい方は医師にご相談ください。</p>
     </details>
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. プライバシーは守られますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力された健康情報はサーバーに送信・保存されません。すべてお使いのブラウザ上で処理されます。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 体質や生活習慣の回答は外部に送られますか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">体質・食生活・運動習慣などの回答はブラウザ内だけで判定に使われ、外部へ送信・保存されません。体重や病歴を入力する必要もないので、デリケートな健康情報を扱う不安なく診断できます。</p>
     </details>
+    
+    
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. このサービスは無料で使えますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、完全無料でご利用いただけます。登録・ログイン不要で、すぐにお使いいただけます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 入力したデータはどこに保存されますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力データはサーバーに送信されません。お使いのブラウザ上でのみ処理されます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 何度でも使えますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、何度でも無料でご利用いただけます。条件を変えてお試しいただけます。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 生活リズムが変わったら診断し直せますか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい。仕事や運動習慣が変わったら回答を変えて何度でも診断できます。糖質制限が続かなかった場合に間欠断食や運動型を試すなど、自分に合う方法を見つけるまで繰り返しご利用ください。</p>
     </details>
   </div>
 </section>
 
-<div class="max-w-lg mx-auto px-4"><section  style="background:#f0f9ff;border:1px solid #bae6fd;padding:16px;text-align:center;font-size:12px;color:#0369a1;border-radius:14px;margin-bottom:16px;">
+<div class="max-w-2xl mx-auto px-4"><section  style="background:#f0f9ff;border:1px solid #bae6fd;padding:16px;text-align:center;font-size:12px;color:#0369a1;border-radius:14px;margin-bottom:16px;">
   <p style="margin:0 0 4px;font-weight:600;">📧 お問い合わせ</p>
   <p style="margin:0;">ご意見・ご要望・不具合のご報告は <a href="mailto:appadaycreator@gmail.com" style="color:#0369a1;font-weight:bold;">appadaycreator@gmail.com</a> または <a href="contact.html" style="color:#0369a1;">お問い合わせフォーム</a> へ</p>
 </section></div>
 
     
-    <div class="max-w-lg mx-auto px-4">
-<!-- phase8-social-proof -->
-    <div class="card p-5 mb-4">
-      <h3 class="font-bold text-gray-800 mb-3 text-sm">⭐ 利用者の声</h3>
-            <div class="space-y-3">
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「ダイエット法が多すぎてどれが自分に合うか迷っていましたが、生活スタイルに合ったものを提案してもらえました。3ヶ月で目標達成できました！」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 田中さん（30代・会社員）★★★★★</p>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「BMIだけでなく、生活習慣も含めてアドバイスしてくれるのが良かったです。お医者さんに相談するきっかけになりました。」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 佐藤さん（40代・主婦）★★★★★</p>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「筋トレのスケジュールをこのアプリで管理するようになってから、継続率がアップしました。シンプルで使いやすいです。」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 山本さん（20代・学生）★★★★☆</p>
-        </div>
-      </div>
-      <div class="flex gap-2 mt-4">
-        <a href="https://line.me/R/share?text=あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案%20https://appadaycreator.com/diet-method-advisor/" target="_blank" rel="noopener"
-           style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:8px;border-radius:8px;font-size:12px;font-weight:bold;text-decoration:none;">
-          LINEでシェア
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=あなたに合うダイエット方法診断 | 体質・生活習慣から最適な方法を提案&url=https://appadaycreator.com/diet-method-advisor/&via=appadaycreator" target="_blank" rel="noopener"
-           style="flex:1;display:block;text-align:center;background:#000;color:white;padding:8px;border-radius:8px;font-size:12px;font-weight:bold;text-decoration:none;">
-          Xでシェア
-        </a>
-      </div>
-    </div>
-    <section style="margin:32px auto;max-width:640px;padding:0 16px;" aria-labelledby="howto-h">
-  <h2 id="howto-h" style="font-size:1.15rem;font-weight:700;margin-bottom:10px;border-left:4px solid #7c3aed;padding-left:10px;">使い方</h2>
-  <ol style="padding-left:20px;line-height:1.9;color:#374151;">
-    <li>ページを開き、フォームの項目を確認する</li>
-    <li>必要な情報を入力または選択する</li>
-    <li>実行ボタンをクリックして結果を取得する</li>
-    <li>表示された結果・アドバイスを確認する</li>
-    <li>必要に応じてコピー・SNSシェアで活用する</li>
-  </ol>
-</section>
+
+<!-- r31-use-cases -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<h2 style="font-size:1.125rem;font-weight:700;margin:0 0 1rem;color:#1e293b;border-left:4px solid #4f46e5;padding-left:10px">こんな方・シーンで役立ちます</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem">
+<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<div style="font-size:1.5rem;margin-bottom:.4rem">💪</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">健康管理・記録を始めたい方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">体重・血圧・睡眠時間など日々のバイタルを記録して変化を把握したい方に。グラフで可視化することで生活改善のきっかけが見つかります。</div>
 </div>
-<!-- rakuten-affiliate-block -->
-    <div style="border:1px solid #BF0000;background:#fff9f9;border-radius:10px;padding:14px;margin:12px auto;max-width:480px;text-align:center;">
-      <p style="font-size:0.85rem;color:#4b5563;margin-bottom:8px;">🛒 関連商品を楽天市場で探す</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/541ad0d2.ce2bed12.541ad0d3.a1a2318c/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2580%25E3%2582%25A4%25E3%2582%25A8%25E3%2583%2583%25E3%2583%2588%2520%25E6%259C%25AC%2F&link_type=text" target="_blank" rel="nofollow sponsored noopener"
-         style="display:inline-block;background:#BF0000;color:white;padding:10px 24px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">
-        楽天市場で「ダイエット 本」を検索 →
-      </a>
-    </div>
+<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<div style="font-size:1.5rem;margin-bottom:.4rem">🏃</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">ダイエット・運動習慣をつけたい方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">目標体重・消費カロリー・必要な運動量を計算して、無理なく継続できる計画を立てたい方に。科学的根拠に基づいた数値で効率よくダイエットできます。</div>
+</div>
+<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<div style="font-size:1.5rem;margin-bottom:.4rem">👩‍⚕️</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">生活習慣病が気になる方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">医師から生活改善のアドバイスを受けて、自己管理の指標として活用したい方に。血圧・血糖値・BMIの適正範囲を確認できます。</div>
+</div>
+<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<div style="font-size:1.5rem;margin-bottom:.4rem">👴</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">シニア・中高年の健康維持</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">年齢に合った適切な運動量・栄養摂取量の目安を知って、元気に過ごしたい中高年の方に。体力の変化に合わせた健康管理ができます。</div>
+</div>
+</div>
+</div>
+<!-- r31-extended-faq -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<div style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08)">
+<h2 style="font-size:1.05rem;font-weight:700;margin:0 0 1rem;border-left:4px solid #4f46e5;padding-left:10px;color:#1e293b">よくある質問（詳細）</h2>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:12px">
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 食事制限と運動、どちらが体重減少に効果的ですか？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">体重減少において「食事制限」と「運動」の効果を比較すると、一般的に「食事制限の方が短期間での体重減少効果が大きい」とされています。30分の運動で消費するカロリーはおよそ200〜300kcalですが、食事の見直しで同等またはそれ以上のカロリー削減が可能なケースが多いです。ただし「運動（特に筋力トレーニング）」は「筋肉量の維持・増加→基礎代謝の向上」「体組成の改善（同じ体重でも引き締まって見える）」「リバウンド防止」という点で食事制限と組み合わせることが理想的です。「食事制限7割＋運動3割」が基本比率とされています。</p></div>
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 1日の食事で意識すべきPFCバランスとは？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">PFCバランスとは「Protein（タンパク質）・Fat（脂質）・Carbohydrate（炭水化物）」のカロリー比率を指します。日本人の食事摂取基準（厚生労働省）では「P：13〜20%」「F：20〜30%」「C：50〜65%」が推奨されています。ダイエット目的では「タンパク質を多め（体重1kgあたり1.5〜2g）」にすることで筋肉量の維持・満腹感の向上・代謝の維持が期待できます。脂質の削りすぎはホルモンバランスの乱れ・脂溶性ビタミン（A・D・E・K）の吸収低下を招くため、質の良い脂質（オリーブオイル・魚・ナッツ）は適切に摂取することが推奨されます。</p></div>
+</div>
+</div>
+</div>
+<!-- r31-tool-notice -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<div style="padding:1.25rem 1.5rem;background:#fef3c7;border:1px solid #fbbf24;border-radius:.75rem">
+<h3 style="font-size:1rem;font-weight:700;margin:0 0 .75rem;color:#92400e">⚠️ ご利用時の注意事項</h3>
+<ul style="margin:0;padding-left:1.25rem;font-size:.88rem;color:#78350f;line-height:2">
+<li style='margin-bottom:.4rem'>本ツールの結果はあくまで参考情報です。医療的な診断・治療の代替にはなりません</li>
+<li style='margin-bottom:.4rem'>体調不良・症状が気になる場合は必ず医療機関（内科・専門科）を受診してください</li>
+<li style='margin-bottom:.4rem'>計算値（BMI・カロリー等）は個人差があるため、実際の状況とは異なる場合があります</li>
+<li style='margin-bottom:.4rem'>妊娠中・授乳中の方や持病がある方は、新しい健康法を始める前に必ず医師にご相談ください</li>
+<li style='margin-bottom:.4rem'>医薬品・サプリメントの使用については必ず医師・薬剤師の指示に従ってください</li>
+</ul>
+</div>
+</div>
+<!-- r31-tool-references -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<div style="padding:1.25rem 1.5rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<h3 style="font-size:1rem;font-weight:700;margin:0 0 .75rem;color:#1e293b">📚 関連する公的情報・参考リンク</h3>
+<ul style="margin:0;padding-left:1.25rem;font-size:.88rem;color:#374151;line-height:1.9">
+<li style='margin-bottom:.5rem'><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/eiyou/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5">厚生労働省 日本人の食事摂取基準</a> — 年齢・性別・活動量に応じた栄養摂取量の公的基準</li>
+<li style='margin-bottom:.5rem'><a href="https://www.nibiohn.go.jp/eiken/kenkounippon21/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5">健康日本21（第三次）</a> — 国民の健康増進・生活習慣病予防の指針</li>
+<li style='margin-bottom:.5rem'><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/sports/index.html" target="_blank" rel="noopener noreferrer" style="color:#4f46e5">厚生労働省 身体活動・運動</a> — 健康を維持するための適切な運動量の目安</li>
+<li style='margin-bottom:.5rem'><a href="https://www.jma.or.jp/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5">日本医師会 健康情報</a> — 医療・健康に関する正確な情報提供</li>
+</ul>
+</div>
+</div>
+<!-- r31-tool-about -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<div style="padding:1.25rem 1.5rem;background:#f0f9ff;border:1px solid #bae6fd;border-radius:.75rem">
+<h3 style="font-size:1rem;font-weight:700;margin:0 0 .75rem;color:#0c4a6e">ℹ️ このツールについて</h3>
+<p style="margin:0;font-size:.88rem;color:#0c4a6e;line-height:1.9">「🥗 ダイエット方法診断」はAppADayCreatorが提供する無料Webツールです。健康・医療に関する情報を素早く手軽に確認できます。会員登録・アプリインストール不要で、ブラウザからすぐにご利用いただけます。すべての処理はブラウザ内で完結するため、入力した情報が外部サーバーに送信されることはなく、プライバシーも保護されます。AppADayCreatorでは、日常生活のあらゆるシーンで役立つWebツールを400本以上無料で提供しています。金融・健康・育児・キャリア・旅行など幅広いカテゴリのツールをご活用ください。</p>
+</div>
+</div>
+<!-- r31-extra-guide -->
+<div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
+<div style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.06)">
+<h3 style="font-size:.95rem;font-weight:700;margin:1.25rem 0 .6rem;color:#1e293b">関連ツールのご紹介</h3>
+
+</div>
+</div>
+
 <!-- phase10-rakuten-updated -->
 <!-- phase10-faq-enhanced -->
 
@@ -519,11 +997,13 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   <p>本サービスの提供する情報は参考目的であり、正確性・完全性を保証するものではありません。
   重要な判断の際は専門家にご相談ください。サービス利用により生じた損害について当サービスは一切の責任を負いません。</p>
 </section>
+<p style="font-size:12px;color:#666;margin:16px 0 8px;padding:8px;background:#fef3c7;border-left:3px solid #f59e0b;"><strong>※本セクション以降は広告を含みます</strong></p>
 <!-- A8アフィリエイト: Kit Oisix -->
 <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:14px;margin:10px 0;">
   <p style="font-size:13px;font-weight:700;color:#166534;margin:0 0 8px;">🥗 20分で2品できる献立キット</p>
   <p style="font-size:12px;color:#374151;margin:0 0 8px;">主菜・副菜の2品が20分で完成。カット済み食材と調味料がセットで届く手軽なミールキット。</p>
-  </div>
+  <a href="https://www.amazon.co.jp/s?k=Oisix+ミールキット&tag=appadaycrea0f-22" target="_blank" rel="noopener" style="display:inline-block;background:#16a34a;color:white;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;margin-top:4px;">🛒 Amazonで Kit Oisix を見る →</a>
+</div>
 <!-- /A8アフィリエイト: Kit Oisix -->
 
 <!-- A8アフィリエイト: ヨシケイ ミールキット -->
@@ -535,17 +1015,130 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 </div>
 <!-- /A8アフィリエイト: ヨシケイ ミールキット -->
 
-<div style="margin:24px auto;max-width:860px;padding:16px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;">
+<div style="margin:24px auto;max-width:720px;padding:16px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;">
   <p style="font-size:12px;font-weight:600;color:#94a3b8;text-align:center;margin:0 0 12px;letter-spacing:0.05em;">スポンサーリンク</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">日々の生活にハッピーをプラス！《ハピタス》</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+18PTPM+1O96+699KI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">《ヨガ》をはじめてみませんか？ホットヨガスタジオLAVA</a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B3WJ7+18PTPM+1O96+699KI" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3VR6+G3D2Y2+1QM6+5YRHE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">【前日注文OK】簡単・便利！レシピ付夕食食材「ヨシケイ」</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3VR6+G3D2Y2+1QM6+5YRHE" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=457C4C+C23BCA+0K+10FXXU" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">アフィリエイトならA8.net</a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=457C4C+C23BCA+0K+10FXXU" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">【じゃらん】国内25,000軒の宿をネットで予約OK！2％ポイント還元！</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">ファイナンシャルアカデミー「お金の教養講座」</a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+18PTPM+1O96+699KI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">《ヨガ》をはじめてみませんか？ホットヨガスタジオLAVA</a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B3WJ7+18PTPM+1O96+699KI" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3VR6+GFV6NE+3CJQ+64C3M" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">本・雑誌・ビジネス書が聴ける【audiobook.jp】</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3VR6+GFV6NE+3CJQ+64C3M" alt="">
   </div>
 </div>
 
+<div style="text-align:center;padding:10px 16px 14px;background:#eef2ff;border-top:2px solid #c7d2fe;margin-top:8px">
+<a href="/blog/" style="color:#4f46e5;font-size:.85rem;font-weight:700">📖 マネー・育児・キャリアのコラムを読む →</a>
+</div>
+
+<section aria-labelledby="faq-h" class="bg-white rounded-2xl shadow-md p-4 mb-4" style="max-width:740px;margin-left:auto;margin-right:auto">
+  
+<div style="background:#f0f7ff;border:1px solid #bfdbfe;border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0" id="tool-desc-box">
+  <h2 style="font-size:1.05rem;font-weight:800;color:#1e40af;margin:0 0 1rem">📋 このツールの詳細</h2>
+  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「🥗 ダイエット方法診断」は、生活習慣・体質・目標から最適なダイエット法を8問で診断。糖質制限・間欠断食・ケトジェニック・運動型など、あなたに合う方法とコツをご提案。</p>
+</div>
+<div style="background:#f0f7ff;border:2px solid #bfdbfe;border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0">
+  <h2 style="font-size:1.1rem;font-weight:800;color:#1e3a5f;margin:0 0 1rem;padding-bottom:.75rem;border-bottom:2px solid #bfdbfe">ダイエット法アドバイザー — 体型・生活習慣別の最適ダイエット提案</h2>
+  <h3 style="font-size:1rem;font-weight:700;color:#1e3a5f;margin:1.25rem 0 .5rem">このツールでできること</h3>
+  <p style="font-size:.9375rem;color:#374151;line-height:1.8;margin:0 0 1rem">現在の体重・目標体重・生活習慣・食事の好み・運動経験などを入力することで、あなたに合ったダイエット方法（糖質制限・カロリー制限・間欠断食・運動中心など）を提案します。各方法のメリット・デメリットと成功率も確認できます。</p>
+  <h3 style="font-size:1rem;font-weight:700;color:#1e3a5f;margin:1.25rem 0 .5rem">科学的に効果が証明されているダイエット法</h3>
+  <p style="font-size:.9375rem;color:#374151;line-height:1.8;margin:0 0 1rem">厚生労働省のガイドラインでは、健康的なダイエットの目安は「月1〜2kg減」です。急激な減量（月3kg以上）は筋肉量の低下・リバウンドリスクが高まります。カロリー収支（消費>摂取）を意識しながら、タンパク質を十分に摂ることが基本原則です。</p>
+  <h3 style="font-size:1rem;font-weight:700;color:#1e3a5f;margin:1.25rem 0 .5rem">ダイエットと代謝・基礎代謝の知識</h3>
+  <p style="font-size:.9375rem;color:#374151;line-height:1.8;margin:0">基礎代謝は1日に何もしなくても消費するカロリーで、成人男性で約1,500kcal、女性で約1,200kcalが目安です。筋肉量が多いほど基礎代謝が高くなるため、筋トレを組み合わせると長期的な脂肪燃焼効率が向上します。</p>
+</div>
+<!-- r16-related-tools -->
+<div style="background:#f8faff;border:1px solid #dbeafe;border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0">
+  <h3 style="font-size:.9375rem;font-weight:800;color:#1e3a5f;margin:0 0 .875rem">🔗 このツールと一緒によく使われるツール</h3>
+  <div style="display:grid;gap:.5rem">
+    <a href="/heart-rate-zone-calculator/" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:.625rem .875rem;border:1px solid #bfdbfe;text-decoration:none;color:#1f2937;font-size:.875rem;font-weight:600">🔗 心拍数ゾーン計算<span style="color:#6b7280;font-size:.78rem;font-weight:400">— 運動強度の最適化</span></a>
+    <a href="/food-restriction-advisor/" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:.625rem .875rem;border:1px solid #bfdbfe;text-decoration:none;color:#1f2937;font-size:.875rem;font-weight:600">🔗 食事制限アドバイザー<span style="color:#6b7280;font-size:.78rem;font-weight:400">— 食事内容の見直し</span></a>
+    <a href="/fermentation-timer/" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:.625rem .875rem;border:1px solid #bfdbfe;text-decoration:none;color:#1f2937;font-size:.875rem;font-weight:600">🔗 発酵食品タイマー<span style="color:#6b7280;font-size:.78rem;font-weight:400">— 腸活でダイエットサポート</span></a>
+  </div>
+</div>
+<!-- r22-editorial -->
+<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:.75rem;padding:1.5rem;margin:1.5rem 0">
+  <h2 style="font-size:1.05rem;font-weight:800;color:#14532d;margin:0 0 1rem;border-left:4px solid #16a34a;padding-left:.75rem">健康管理の基礎知識（厚生労働省データ）</h2>
+  <p style="font-size:.88rem;color:#4b5563;margin:0 0 .75rem">厚生労働省「国民健康栄養調査」などのデータから、日本人の健康状態と予防のポイントを整理しました。</p>
+  <table style="width:100%;border-collapse:collapse;font-size:.83rem">
+    <thead>
+      <tr style="background:#bbf7d0">
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bbf7d0;color:#14532d">項目</th>
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bbf7d0;color:#14532d">データ</th>
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bbf7d0;color:#14532d">出典</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#f0fdf4">
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-weight:600;color:#14532d">成人の肥満割合（BMI25以上）</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0"><strong>男性33.0%・女性22.3%（2022年）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-size:.78rem;color:#6b7280">厚生労働省「国民健康栄養調査」2022年</td>
+      </tr>
+      <tr style="">
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-weight:600;color:#14532d">1日の歩数の目標</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0"><strong>男性8,000歩・女性7,000歩（厚生労働省推奨）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-size:.78rem;color:#6b7280">厚生労働省「健康日本21（第二次）」</td>
+      </tr>
+      <tr style="background:#f0fdf4">
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-weight:600;color:#14532d">睡眠時間の目安（成人）</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0"><strong>7〜9時間が推奨（6時間未満は健康リスク増）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-size:.78rem;color:#6b7280">WHO・厚生労働省「健康づくりのための睡眠ガイド2023」</td>
+      </tr>
+      <tr style="">
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-weight:600;color:#14532d">生活習慣病の主な予防因子</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0"><strong>適度な運動・バランスの良い食事・禁煙・適量飲酒</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bbf7d0;font-size:.78rem;color:#6b7280">厚生労働省「生活習慣病予防のための健康情報」</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- r20-tool-links -->
+<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:.75rem;padding:1.25rem 1.5rem;margin:2rem 0">
+  <p style="font-weight:700;color:#374151;margin:0 0 .75rem;font-size:.9rem">📖 あわせて読みたいコラム記事</p>
+  <ul style="margin:0;padding-left:1.25rem;color:#4b5563;line-height:2">
+    <li><a href="/blog/household-budget-guide/" style="color:#4f46e5">家計管理の基本と節約術</a></li>
+    <li><a href="/blog/frugal-living-guide/" style="color:#4f46e5">節約生活で年間100万円貯める方法</a></li>
+  </ul>
+</div>
+<div id="tool-disclaimer" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:.875rem">
+  <p style="font-weight:700;color:#374151;margin:0 0 .5rem">⚠️ 計算結果の活用にあたって</p>
+  <p style="color:#4b5563;margin:0 0 .5rem;line-height:1.75">計算結果は参考値であり、医学的診断ではありません。健康に関する重要な判断は必ず医師・専門家にご相談ください。</p>
+  <ul style="margin:0;padding-left:1.25rem;color:#4b5563;line-height:1.9"><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html" target="_blank" rel="noopener noreferrer" style="color:#4f46e5;font-size:.85rem">厚生労働省「健康・医療」</a></li></ul>
+</div>
+<h2 id="faq-h" style="font-size:1.05rem;font-weight:700;margin-bottom:12px;border-left:4px solid #4f46e5;padding-left:10px;">よくある質問</h2>
+  <dl style="line-height:1.8;">
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 科学的に効果が認められているダイエット方法は何ですか？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">科学的な根拠が比較的強いダイエット方法として「摂取カロリーの制限（最も基本的・長期的な体重管理に有効）」「地中海食（野菜・魚・オリーブオイル中心）」「間欠的断食（16:8法等・摂取カロリー管理と同等の効果）」「タンパク質を中心とした食事（筋肉量の維持・満腹感）」があります。一方で「〇〇だけ食べるダイエット」「短期間で劇的に痩せる方法」の多くは科学的根拠が乏しく、リバウンドリスクも高いです。長期的な食習慣の改善と適度な運動の組み合わせが最も効果的かつ維持しやすいとされています。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 糖質制限ダイエットの効果とリスクは？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">糖質制限ダイエット（ローカーボ・ケトジェニック）は「短期間での体重減少（主に水分・グリコーゲン）」「血糖値の安定化」「空腹感が出にくい人もいる」という利点があります。ただし「完全な糖質カット（ケトジェニック）は長期維持が難しい」「筋肉の減少リスク（タンパク質を十分に摂取することで緩和）」「便秘（食物繊維が不足しやすい）」「医療上の注意が必要な場合がある（糖尿病薬服用中等）」というリスクもあります。中程度の糖質制限（極端に絞らない）は多くの人にとって実践しやすく効果的とされています。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. リバウンドしにくい体重維持の方法は？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">ダイエット後のリバウンドを防ぐためのポイントとして「急激な減量を避ける（月2kg以内が目安）」「筋肉量を維持・増加させる（筋肉は基礎代謝を上げる）」「食事制限の解除後に「元の食事に完全に戻さない」（徐々に増量）」「計量・記録の継続（週1回の体重確認）」があります。リバウンドが起きやすいのは「目標体重達成後に食事管理をやめてしまう」パターンです。「一時的なダイエット」ではなく「生涯の食習慣の改善」という視点の転換が長期的な体重管理の鍵です。</dd>
+  </dl>
+</section>
+<div style="background:#eef2ff;border-left:4px solid #4f46e5;border-radius:.5rem;padding:1rem 1.25rem;margin:1.5rem auto;max-width:760px;font-size:.875rem">
+<p style="margin:0 0 .5rem;font-weight:700;color:#3730a3">📖 お役立ちコラム</p>
+<ul style="margin:0;padding-left:1.25rem;color:#4f46e5;line-height:2">
+<li><a href="/blog/stock-investment-beginner/" style="color:#4f46e5">株式投資の始め方【初心者完全ガイド】</a></li>
+<li><a href="/blog/nisa-comparison/" style="color:#4f46e5">新NISA vs iDeCo 徹底比較</a></li>
+<li><a href="/blog/investment-risk-management/" style="color:#4f46e5">投資のリスク管理入門</a></li>
+</ul>
+</div>
+<!-- r17-mobile-ux -->
+<a href="#top" id="back-to-top" aria-label="ページトップへ戻る" style="display:none;position:fixed;bottom:24px;right:20px;background:#4f46e5;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:1.4rem;line-height:48px;text-align:center;text-decoration:none;box-shadow:0 4px 12px rgba(79,70,229,.4);z-index:9000;cursor:pointer" title="ページトップへ">↑</a>
+<script>
+(function(){
+  var btn = document.getElementById('back-to-top');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  }, {passive:true});
+})();
+</script>
+<!-- r31-cookie-banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#f1f5f9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;z-index:9999;font-size:.85rem;box-shadow:0 -2px 10px rgba(0,0,0,.3)">
+<div>当サイトはCookieおよびGoogle Analyticsを使用しています。<a href="/privacy-policy.html" style="color:#60a5fa;text-decoration:underline">プライバシーポリシー</a>をご確認ください。</div>
+<button onclick="document.getElementById('cookie-banner').style.display='none';window.grantConsent && window.grantConsent()" style="background:#3b82f6;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:.375rem;font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap">同意して閉じる</button>
+</div>
+<script>if(localStorage.getItem('cookie-consent'))document.getElementById('cookie-banner').style.display='none'</script>
+<!-- r46-org-footer -->
+<div style="text-align:center;font-size:11px;color:#9ca3af;padding:6px 0 4px;background:#f8fafc;border-top:1px solid #e5e7eb;">
+  運営: <a href="https://appadaycreator.com/" style="color:#9ca3af;text-decoration:none;">AppADayCreator</a> | <a href="https://tech-and-brace.co.jp/" rel="noopener" style="color:#9ca3af;text-decoration:none;">株式会社Tech&amp;Brace</a>
+</div>
+<script src="/assets/consent-mode.js"></script>
 </body>
 </html>
