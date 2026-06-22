@@ -166,7 +166,43 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 .dma-hero .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
 .dma-hero .pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:7px 13px;border-radius:10px;font-size:13px;font-weight:700;}
 .dma-hero .pill img{width:20px;height:20px;background:#fff;border-radius:5px;padding:2px;}
-@media(max-width:780px){.dma-hero h1{font-size:25px;}.dma-hero .in{padding:40px 18px;}}
+/* two-column hero (faithful to design 01) */
+.dma-hero .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
+.dma-preview{background:#fff;color:#1f2937;border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,.3);padding:22px;}
+.dma-preview .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.dma-preview .ph b{font-size:15px;}
+.dma-preview .ph span{font-size:11px;color:#fff;background:var(--dma-accent);padding:3px 10px;border-radius:999px;font-weight:700;}
+.dma-rankrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+.dma-rank{border-radius:12px;padding:12px 8px;text-align:center;border:1px solid #e5e7eb;}
+.dma-rank.r1{background:#ecfdf5;border-color:#a7f3d0;}
+.dma-rank .lbl{font-size:11px;color:#6b7280;font-weight:700;}
+.dma-rank .nm{font-size:12px;font-weight:700;margin:4px 0;}
+.dma-rank .sc{font-size:26px;font-weight:900;color:var(--dma-primary);}
+.dma-rank .sc small{font-size:12px;}
+@media(max-width:780px){.dma-hero h1{font-size:25px;}.dma-hero .in{padding:40px 18px;}.dma-hero .grid2{grid-template-columns:1fr;gap:30px;}}
+
+/* marketing sections (design 01) */
+.dma-sec{max-width:1120px;margin:0 auto;padding:52px 20px;}
+.dma-sec .tag{display:block;text-align:center;color:var(--dma-primary);font-weight:800;font-size:13px;letter-spacing:.08em;margin-bottom:8px;}
+.dma-sec .ttl{font-size:26px;font-weight:800;text-align:center;line-height:1.4;margin-bottom:10px;color:#1f2937;}
+.dma-sec .ttl .hl{color:var(--dma-primary);}
+.dma-sec .sub{text-align:center;color:#6b7280;font-size:14px;margin-bottom:34px;}
+.dma-worry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.dma-worry{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px 14px;text-align:center;font-size:13px;font-weight:600;color:#374151;line-height:1.6;}
+.dma-worry img{width:46px;height:46px;margin:0 auto 12px;object-fit:contain;}
+.dma-solve{text-align:center;margin-top:30px;}
+.dma-solve .arrow{font-size:26px;color:var(--dma-primary);}
+.dma-solve b{display:inline-block;background:var(--dma-primary);color:#fff;font-size:19px;font-weight:800;padding:11px 32px;border-radius:999px;margin-top:6px;}
+.dma-feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.dma-feat{background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:.2s;}
+.dma-feat:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.1);}
+.dma-feat .fph{height:120px;background-size:cover;background-position:center;}
+.dma-feat .fbd{padding:18px 16px;}
+.dma-feat .fico{width:42px;height:42px;margin-top:-42px;position:relative;background:#fff;border-radius:12px;padding:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);margin-bottom:10px;}
+.dma-feat h3{font-size:15px;font-weight:800;margin-bottom:8px;color:#1f2937;}
+.dma-feat p{font-size:13px;color:#6b7280;line-height:1.75;}
+@media(max-width:860px){.dma-worry-grid{grid-template-columns:repeat(2,1fr);}.dma-feat-grid{grid-template-columns:repeat(2,1fr);}.dma-sec .ttl{font-size:22px;}}
+@media(max-width:520px){.dma-feat-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body class="min-h-screen text-gray-800" style="background:#f8fafc;">
@@ -191,18 +227,62 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 <section class="dma-hero">
   <div class="bg"></div>
   <div class="in">
-    <span class="badge"><img src="assets/icons/split/01-02.png" alt="">無料・登録不要のダイエット診断</span>
-    <h1>8問で分かる、<span class="yel">あなたに合うダイエット方法</span>｜無料診断ツール</h1>
-    <p class="lead">体質・生活習慣から最適なダイエット法を8問で診断。複数パターン比較とシミュレーション機能で、理想のダイエットを見つけよう。</p>
-    <div class="cta-row">
-      <a class="b1" href="#main" onclick="try{startDiagnosis();}catch(e){}">診断を始める →</a>
-      <a class="b2" href="lp/">サービスの特徴を見る</a>
+    <div class="grid2">
+      <div>
+        <span class="badge"><img src="assets/icons/split/01-02.png" alt="">無料・登録不要のダイエット診断</span>
+        <h1>8問で分かる、<span class="yel">あなたに合うダイエット方法</span>｜無料診断ツール</h1>
+        <p class="lead">体質・生活習慣から最適なダイエット法を8問で診断。複数パターン比較とシミュレーション機能で、理想のダイエットを見つけよう。</p>
+        <div class="cta-row">
+          <a class="b1" href="#main" onclick="try{startDiagnosis();}catch(e){}">診断を始める →</a>
+          <a class="b2" href="lp/">サービスの特徴を見る</a>
+        </div>
+        <div class="pills">
+          <div class="pill"><img src="assets/icons/split/01-01.png" alt="">8問でスピード診断</div>
+          <div class="pill"><img src="assets/icons/split/01-06.png" alt="">複数パターン比較</div>
+          <div class="pill"><img src="assets/icons/split/01-07.png" alt="">リアルタイムシミュレーション</div>
+        </div>
+      </div>
+      <div class="dma-preview">
+        <div class="ph"><b>あなたの診断結果 TOP3</b><span>AI診断</span></div>
+        <div class="dma-rankrow">
+          <div class="dma-rank r1"><div class="lbl">🥇 1位</div><div class="nm">糖質制限</div><div class="sc">86<small>%</small></div></div>
+          <div class="dma-rank"><div class="lbl">🥈 2位</div><div class="nm">間欠断食</div><div class="sc">72<small>%</small></div></div>
+          <div class="dma-rank"><div class="lbl">🥉 3位</div><div class="nm">運動型</div><div class="sc">72<small>%</small></div></div>
+        </div>
+        <div style="height:150px"><canvas id="dmaHeroChart"></canvas></div>
+        <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:8px">※ 12週間の体重シミュレーション（イメージ）</p>
+      </div>
     </div>
-    <div class="pills">
-      <div class="pill"><img src="assets/icons/split/01-01.png" alt="">8問でスピード診断</div>
-      <div class="pill"><img src="assets/icons/split/01-06.png" alt="">複数パターン比較</div>
-      <div class="pill"><img src="assets/icons/split/01-07.png" alt="">リアルタイムシミュレーション</div>
+  </div>
+</section>
+
+<!-- Worries (design 01) -->
+<section class="dma-sec" style="background:#f0fdf4;max-width:none;">
+  <div class="dma-sec" style="padding:0;">
+    <span class="tag">YOUR WORRIES</span>
+    <h2 class="ttl">こんな<span class="hl">お悩み</span>ありませんか？</h2>
+    <p class="sub">ダイエットが続かない原因は「自分に合わない方法」を選んでいるからかもしれません。</p>
+    <div class="dma-worry-grid">
+      <div class="dma-worry"><img src="assets/icons/split/04-04.png" alt="">何度も挫折してリバウンドを繰り返す</div>
+      <div class="dma-worry"><img src="assets/icons/split/03-01.png" alt="">糖質制限・断食…結局どれが合うか分からない</div>
+      <div class="dma-worry"><img src="assets/icons/split/03-05.png" alt="">運動が苦手で続けられる方法を知りたい</div>
+      <div class="dma-worry"><img src="assets/icons/split/01-01.png" alt="">忙しくて時間をかけずに方向性を決めたい</div>
+      <div class="dma-worry"><img src="assets/icons/split/01-07.png" alt="">どれくらい痩せるのか先にイメージしたい</div>
     </div>
+    <div class="dma-solve"><div class="arrow">▼</div><b>この診断で、すべて解決！</b></div>
+  </div>
+</section>
+
+<!-- Features (design 01) -->
+<section class="dma-sec">
+  <span class="tag">FEATURES</span>
+  <h2 class="ttl">この診断の<span class="hl">4つの特徴</span></h2>
+  <p class="sub">8問に答えるだけ。あなたの体質・生活に合った続けられる方法が見つかります。</p>
+  <div class="dma-feat-grid">
+    <div class="dma-feat"><div class="fph" style="background-image:url(assets/photos/photo_02.jpg)"></div><div class="fbd"><img class="fico" src="assets/icons/split/01-01.png" alt=""><h3>8問で高速診断</h3><p>たった8問・約1分。体型・目標・食事・運動の傾向から最適なダイエット法を即判定します。</p></div></div>
+    <div class="dma-feat"><div class="fph" style="background-image:url(assets/photos/photo_03.jpg)"></div><div class="fbd"><img class="fico" src="assets/icons/split/01-06.png" alt=""><h3>複数パターン比較</h3><p>回答パターンA・B・Cを並べて比較。「どの条件が自分に効くか」が一目で分かります。</p></div></div>
+    <div class="dma-feat"><div class="fph" style="background-image:url(assets/photos/photo_04.jpg)"></div><div class="fbd"><img class="fico" src="assets/icons/split/01-07.png" alt=""><h3>リアルタイムシミュレーション</h3><p>回答を1つ変えるとTOP3がその場で変化。理想に近づく条件を試しながら探せます。</p></div></div>
+    <div class="dma-feat"><div class="fph" style="background-image:url(assets/photos/photo_05.jpg)"></div><div class="fbd"><img class="fico" src="assets/icons/split/02-05.png" alt=""><h3>AIで理由を科学的に解説</h3><p>なぜその方法が合うのかをAIが分かりやすく解説。納得して始められるから続けられます。</p></div></div>
   </div>
 </section>
 
@@ -1236,5 +1316,13 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   運営: <a href="https://appadaycreator.com/" style="color:#9ca3af;text-decoration:none;">AppADayCreator</a> | <a href="https://tech-and-brace.co.jp/" rel="noopener" style="color:#9ca3af;text-decoration:none;">株式会社Tech&amp;Brace</a>
 </div>
 <script src="/assets/consent-mode.js"></script>
+<script>
+// Hero preview chart (design 01)
+document.addEventListener('DOMContentLoaded',function(){
+  var el=document.getElementById('dmaHeroChart');
+  if(!el||!window.Chart)return;
+  new Chart(el,{type:'line',data:{labels:['今','3週','6週','9週','12週',''],datasets:[{data:[68,67.2,66.5,65.8,65.2,65.2],borderColor:'#059669',backgroundColor:'rgba(5,150,105,.12)',fill:true,tension:.35,pointBackgroundColor:'#059669',pointRadius:3,borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return v+'kg'}},grid:{color:'#eef2f0'}},x:{grid:{display:false}}}}});
+});
+</script>
 </body>
 </html>
