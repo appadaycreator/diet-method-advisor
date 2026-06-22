@@ -179,7 +179,16 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 .dma-rank .nm{font-size:12px;font-weight:700;margin:4px 0;}
 .dma-rank .sc{font-size:26px;font-weight:900;color:var(--dma-primary);}
 .dma-rank .sc small{font-size:12px;}
-@media(max-width:780px){.dma-hero h1{font-size:25px;}.dma-hero .in{padding:40px 18px;}.dma-hero .grid2{grid-template-columns:1fr;gap:30px;}}
+/* hero visual: woman photo + floating result card */
+.dma-hvisual{position:relative;}
+.dma-hphoto{width:100%;height:470px;object-fit:cover;object-position:top center;border-radius:22px;display:block;box-shadow:0 30px 60px rgba(0,0,0,.38);border:4px solid rgba(255,255,255,.4);}
+.dma-hvisual .dma-preview{position:absolute;left:-24px;bottom:-24px;width:300px;padding:16px;}
+.dma-hvisual .dma-preview canvas{max-height:120px;}
+.dma-hfloat{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:8px;background:#fff;color:#1f2937;padding:9px 14px;border-radius:14px;box-shadow:0 12px 26px rgba(0,0,0,.22);font-size:12.5px;font-weight:800;}
+.dma-hfloat .n{color:var(--dma-primary);font-size:19px;font-weight:900;}
+@media(max-width:780px){.dma-hero h1{font-size:25px;}.dma-hero .in{padding:40px 18px;}.dma-hero .grid2{grid-template-columns:1fr;gap:44px;}
+.dma-hphoto{height:320px;}.dma-hvisual .dma-preview{position:static;width:100%;margin-top:14px;}
+.dma-stats>div{grid-template-columns:repeat(2,1fr)!important;gap:22px 14px!important;}}
 
 /* marketing sections (design 01) */
 .dma-sec{max-width:1120px;margin:0 auto;padding:52px 20px;}
@@ -242,17 +251,31 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
           <div class="pill"><img src="assets/icons/split/01-07.png" alt="">リアルタイムシミュレーション</div>
         </div>
       </div>
-      <div class="dma-preview">
-        <div class="ph"><b>あなたの診断結果 TOP3</b><span>AI診断</span></div>
-        <div class="dma-rankrow">
-          <div class="dma-rank r1"><div class="lbl">🥇 1位</div><div class="nm">糖質制限</div><div class="sc">86<small>%</small></div></div>
-          <div class="dma-rank"><div class="lbl">🥈 2位</div><div class="nm">間欠断食</div><div class="sc">72<small>%</small></div></div>
-          <div class="dma-rank"><div class="lbl">🥉 3位</div><div class="nm">運動型</div><div class="sc">72<small>%</small></div></div>
+      <div class="dma-hvisual">
+        <img class="dma-hphoto" src="assets/photos/photo_03.jpg" alt="自分に合うダイエットで前向きに取り組む女性">
+        <div class="dma-hfloat"><span class="n">98%</span>が「続けやすい」と回答</div>
+        <div class="dma-preview">
+          <div class="ph"><b>あなたの診断結果 TOP3</b><span>AI診断</span></div>
+          <div class="dma-rankrow">
+            <div class="dma-rank r1"><div class="lbl">🥇 1位</div><div class="nm">糖質制限</div><div class="sc">86<small>%</small></div></div>
+            <div class="dma-rank"><div class="lbl">🥈 2位</div><div class="nm">間欠断食</div><div class="sc">72<small>%</small></div></div>
+            <div class="dma-rank"><div class="lbl">🥉 3位</div><div class="nm">運動型</div><div class="sc">72<small>%</small></div></div>
+          </div>
+          <div style="height:120px"><canvas id="dmaHeroChart"></canvas></div>
+          <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:6px">※ 12週間の体重シミュレーション（イメージ）</p>
         </div>
-        <div style="height:150px"><canvas id="dmaHeroChart"></canvas></div>
-        <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:8px">※ 12週間の体重シミュレーション（イメージ）</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Trust / stats band -->
+<section class="dma-stats" style="background:var(--dma-primary);color:#fff;padding:24px 16px;">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;">
+    <div><div style="font-size:28px;font-weight:900;line-height:1.1">8<span style="font-size:14px">問</span></div><div style="font-size:12px;color:#d1fae5;font-weight:600">約1分でスピード診断</div></div>
+    <div><div style="font-size:28px;font-weight:900;line-height:1.1">5<span style="font-size:14px">種類</span></div><div style="font-size:12px;color:#d1fae5;font-weight:600">主要ダイエット法を比較</div></div>
+    <div><div style="font-size:28px;font-weight:900;line-height:1.1">¥0</div><div style="font-size:12px;color:#d1fae5;font-weight:600">完全無料・登録不要</div></div>
+    <div><div style="font-size:28px;font-weight:900;line-height:1.1">12<span style="font-size:14px">週</span></div><div style="font-size:12px;color:#d1fae5;font-weight:600">体重推移をシミュレーション</div></div>
   </div>
 </section>
 

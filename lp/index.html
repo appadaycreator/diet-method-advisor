@@ -78,12 +78,30 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdr
 .rank .sc{font-size:26px;font-weight:900;color:var(--primary);}
 .rank .sc small{font-size:12px;}
 .preview-chart{height:150px;}
+/* hero visual (woman photo + floating card) */
+.hero-visual{position:relative;}
+.hero-photo{width:100%;height:480px;object-fit:cover;object-position:top center;border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.38);border:4px solid rgba(255,255,255,.4);}
+.hero-visual .preview{position:absolute;left:-26px;bottom:-26px;width:300px;padding:16px;}
+.hero-visual .preview .preview-chart{height:120px;}
+.hero-float-badge{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:9px 14px;border-radius:14px;box-shadow:0 12px 26px rgba(0,0,0,.22);font-size:12.5px;font-weight:800;}
+.hero-float-badge .n{color:var(--primary);font-size:19px;font-weight:900;}
 
 @media(max-width:860px){
-.hero-inner{grid-template-columns:1fr;gap:32px;padding:52px 0;}
+.hero-inner{grid-template-columns:1fr;gap:48px;padding:52px 0;}
 .hero h1{font-size:31px;}
 .sec-title{font-size:24px;}
+.hero-photo{height:340px;}
+.hero-visual .preview{position:static;width:100%;margin-top:14px;}
+.stats-band .wrap{grid-template-columns:repeat(2,1fr)!important;gap:22px 14px!important;}
 }
+/* Step flow */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:st;}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 20px 22px;box-shadow:0 6px 20px rgba(0,0,0,.05);text-align:center;}
+.step::before{counter-increment:st;content:counter(st);position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(5,150,105,.35);}
+.step img{width:54px;height:54px;object-fit:contain;margin:8px auto 12px;}
+.step h3{font-size:16px;font-weight:800;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.75;}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:30px;}}
 
 /* Worries */
 .worry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
@@ -205,6 +223,7 @@ footer{background:#0f2e24;color:#cbd5d1;font-size:13px;}
     <nav class="nav-links">
       <a href="#worries">お悩み</a>
       <a href="#features">特徴</a>
+      <a href="#flow">診断の流れ</a>
       <a href="#compare">比較</a>
       <a href="#plan">実行プラン</a>
       <a href="#voice">口コミ</a>
@@ -232,16 +251,30 @@ footer{background:#0f2e24;color:#cbd5d1;font-size:13px;}
         <div class="hero-pill"><img src="../assets/icons/split/01-07.png" alt="">リアルタイムシミュレーション</div>
       </div>
     </div>
-    <div class="preview">
-      <div class="preview-head"><b>あなたの診断結果 TOP3</b><span>AI診断</span></div>
-      <div class="rank-row">
-        <div class="rank r1"><div class="lbl">🥇 1位</div><div class="nm">糖質制限</div><div class="sc">86<small>%</small></div></div>
-        <div class="rank"><div class="lbl">🥈 2位</div><div class="nm">間欠断食</div><div class="sc">72<small>%</small></div></div>
-        <div class="rank"><div class="lbl">🥉 3位</div><div class="nm">運動型</div><div class="sc">72<small>%</small></div></div>
+    <div class="hero-visual">
+      <img class="hero-photo" src="../assets/photos/photo_03.jpg" alt="自分に合うダイエットで前向きに取り組む女性">
+      <div class="hero-float-badge"><span class="n">98%</span>が「続けやすい」と回答</div>
+      <div class="preview">
+        <div class="preview-head"><b>あなたの診断結果 TOP3</b><span>AI診断</span></div>
+        <div class="rank-row">
+          <div class="rank r1"><div class="lbl">🥇 1位</div><div class="nm">糖質制限</div><div class="sc">86<small>%</small></div></div>
+          <div class="rank"><div class="lbl">🥈 2位</div><div class="nm">間欠断食</div><div class="sc">72<small>%</small></div></div>
+          <div class="rank"><div class="lbl">🥉 3位</div><div class="nm">運動型</div><div class="sc">72<small>%</small></div></div>
+        </div>
+        <div class="preview-chart"><canvas id="heroChart"></canvas></div>
+        <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:8px">※ 12週間の体重シミュレーション（イメージ）</p>
       </div>
-      <div class="preview-chart"><canvas id="heroChart"></canvas></div>
-      <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:8px">※ 12週間の体重シミュレーション（イメージ）</p>
     </div>
+  </div>
+</section>
+
+<!-- Trust / stats band -->
+<section class="stats-band" style="background:var(--primary);color:#fff;padding:26px 0;">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;">
+    <div><div style="font-size:30px;font-weight:900;line-height:1.1">8<span style="font-size:15px">問</span></div><div style="font-size:12.5px;color:#d1fae5;font-weight:600">約1分でスピード診断</div></div>
+    <div><div style="font-size:30px;font-weight:900;line-height:1.1">5<span style="font-size:15px">種類</span></div><div style="font-size:12.5px;color:#d1fae5;font-weight:600">主要ダイエット法を比較</div></div>
+    <div><div style="font-size:30px;font-weight:900;line-height:1.1">¥0</div><div style="font-size:12.5px;color:#d1fae5;font-weight:600">完全無料・登録不要</div></div>
+    <div><div style="font-size:30px;font-weight:900;line-height:1.1">12<span style="font-size:15px">週</span></div><div style="font-size:12.5px;color:#d1fae5;font-weight:600">体重推移をシミュレーション</div></div>
   </div>
 </section>
 
@@ -289,6 +322,33 @@ footer{background:#0f2e24;color:#cbd5d1;font-size:13px;}
         <div class="bd"><img class="fico" src="../assets/icons/split/02-05.png" alt=""><h3>AIで理由を科学的に解説</h3><p>なぜその方法が合うのかをAIが分かりやすく解説。納得して始められるから続けられます。</p></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Diagnosis flow -->
+<section class="sec" id="flow" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <p class="sec-tag" style="text-align:center;display:block">HOW IT WORKS</p>
+    <h2 class="sec-title"><span class="hl">3ステップ</span>で、あなたの最適解が分かる</h2>
+    <p class="sec-sub">面倒な入力や登録は不要。スマホでサッと、続けられる方法が見つかります。</p>
+    <div class="steps" style="margin-top:42px">
+      <div class="step">
+        <img src="../assets/icons/split/01-01.png" alt="">
+        <h3>8問の質問に答える</h3>
+        <p>体型・目標・食事・運動・生活リズムなど、選ぶだけの簡単な8問。約1分で完了します。</p>
+      </div>
+      <div class="step">
+        <img src="../assets/icons/split/01-06.png" alt="">
+        <h3>TOP3とマッチ度を確認</h3>
+        <p>5種類のダイエット法の相性をスコア化。あなたに合う上位3つを、その理由とともに表示します。</p>
+      </div>
+      <div class="step">
+        <img src="../assets/icons/split/01-07.png" alt="">
+        <h3>比較・シミュレーション</h3>
+        <p>条件を変えながら結果の変化を確認し、体重推移グラフと実行プランで具体的に動き出せます。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a class="btn btn-primary" href="../">無料で診断を始める →</a></div>
   </div>
 </section>
 
